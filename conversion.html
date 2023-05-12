@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Time Conversion</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #f4f4f4;
+            text-align: center;
+        }
+
+        .header {
+            padding: 20px;
+            background-color: #007bff;
+            color: #fff;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            margin-top: 0;
+        }
+
+        .clock-img {
+            height: 100px;
+            margin-bottom: 20px;
+        }
+
+        label {
+            font-size: 18px;
+            color: #333;
+        }
+
+        input {
+            padding: 8px;
+            font-size: 16px;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #4caf50;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+
+        #results {
+            margin-top: 20px;
+        }
+
+        p {
+            font-size: 18px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Time Conversion</h1>
+        <img class="clock-img" src="https://static.vecteezy.com/system/resources/previews/009/342/688/original/clock-icon-clipart-design-illustration-free-png.png" alt="clock icon">
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 mx-auto">
+                <form>
+                    <div class="form-group">
+                        <label for="hours">Enter hours:</label>
+                        <input type="number" id="hours" class="form-control">
+                    </div>
+
+                    <button type="button" class="btn btn-primary btn-block" onclick="convertTime()">Convert</button>
+                </form>
+
+                <div id="results" class="mt-4">
+                    <p id="seconds"></p>
+                    <p id="minutes"></p>
+                    <p id="days"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function convertTime() {
+            const hours = parseFloat(document.getElementById("hours").value);
+            const seconds = hours * 3600;
+            const minutes = hours * 60;
+            const days = hours / 24;
+
+            document.getElementById("seconds").textContent = seconds + " seconds";
+            document.getElementById("minutes").textContent = minutes + " minutes";
+            document.getElementById("days").textContent = days + " days";
+        }
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+</html>
+
+
